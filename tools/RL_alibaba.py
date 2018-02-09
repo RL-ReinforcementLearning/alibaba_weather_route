@@ -1024,7 +1024,7 @@ def reinforcement_learning_solution_wind_and_rainfall(cf):
             print("Processing weather data...")
             start_hour = A_star_model_precompute_csv[day][goal_city][1]['start_hour']
             start_min = A_star_model_precompute_csv[day][goal_city][1]['start_min']
-            time_length = int((cf.hour_unique[1] - start_hour + 1) * 30 - start_min/2 - 1)
+            time_length = int((cf.hour_unique[1] - start_hour + 1) * 30 - start_min/2)
             # deal weather data
             wind_real_day_hour_total, rainfall_real_day_hour_total = process_wind_and_rainfall(cf, day, start_hour)
 
@@ -1273,7 +1273,7 @@ def reinforcement_learning_solution_worker_wind_and_rainfall(cf, day, goal_city,
     cf.model_number = list(range(1, 12))
     start_hour = A_star_model_precompute_csv[day][goal_city][1]['start_hour']
     start_min = A_star_model_precompute_csv[day][goal_city][1]['start_min']
-    time_length = int((cf.hour_unique[1] - start_hour + 1) * 30 - start_min / 2 - 1)
+    time_length = int((cf.hour_unique[1] - start_hour + 1) * 30 - start_min / 2)
     wind_real_day_hour_total, rainfall_real_day_hour_total = process_wind_and_rainfall(cf, day, start_hour)
 
     city_start_time = timer()

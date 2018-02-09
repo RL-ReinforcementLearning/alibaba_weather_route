@@ -82,7 +82,7 @@ class Maze_3D:
 
         # This is a bug...Di Wu should fix it, but he does not have time now...
         reward_move = self.cost_matrix[self.wind_model, x, y,
-                                       min(int(t + self.short_steps) // self.hourly_travel_distance, self.cost_matrix.shape[-1]-1)]
+                                       min(int(t + self.short_steps) // self.hourly_travel_distance, int(self.cost_matrix.shape[-1]-1))]
         if tuple([x, y, t]) in self.GOAL_STATES:
             # We add reward move because the goal state could have wind speed larger than 13...
             reward = self.reward_goal
